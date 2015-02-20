@@ -23,9 +23,17 @@ namespace PokemonTyping
             FirstType = pokemonType;
             Enum.TryParse(secondType, true, out pokemonType);
             SecondType = pokemonType;
-            IdNumber = (nationalDexNumber[1] - '0')*100 + 
-                (nationalDexNumber[2] - '0')*10 + 
+            try
+            {
+                IdNumber = (nationalDexNumber[1] - '0') * 100 +
+                (nationalDexNumber[2] - '0') * 10 +
                 (nationalDexNumber[3] - '0');
+            }
+            catch (Exception)
+            {
+                IdNumber = Convert.ToInt32(nationalDexNumber);
+            }
+            
             Name = name;
         }
         

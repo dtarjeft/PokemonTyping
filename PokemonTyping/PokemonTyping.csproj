@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommaSeparatedFilePairPokemon.cs" />
+    <Compile Include="CommaSeparatedFilePokedex.cs" />
     <Compile Include="IPairPokemon.cs" />
     <Compile Include="IPokedex.cs" />
     <Compile Include="BulbapediaPokedex.cs" />

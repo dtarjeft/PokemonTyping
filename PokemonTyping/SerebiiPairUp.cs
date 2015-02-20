@@ -60,6 +60,10 @@ namespace PokemonTyping
             {
                 return 1.0;
             }
+            if (childNode.Attributes["title"] == null)
+            {
+                return 1.0;
+            }
             var multiplier = childNode.Attributes["title"].Value;
 
             switch (multiplier)
