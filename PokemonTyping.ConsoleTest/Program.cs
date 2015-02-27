@@ -68,12 +68,13 @@ namespace PokemonTyping.ConsoleTest
             const string pokemonsTxt = ".\\Pokemons.txt";
             const string matchTxt = ".\\Match.txt";
 
-            // Comment out between this and the following comment after running once.
-            var csvPokedex = new BulbapediaPokedex();
-            var csvPairUp = new SerebiiPairUp();
-            CommaValuedPokemonFile(pokemonsTxt, csvPokedex);
-            CommaValuedPairUps(matchTxt, csvPokedex, csvPairUp);
-            // Apologies for doing this in such a hacky way... These output the data for the comma-separated files that the comma-separated classes depend on.
+            if (!File.Exists(pokemonsTxt) || !File.Exists(matchTxt))
+            {
+                var bulbaPokedex = new BulbapediaPokedex();
+                CommaValuedPokemonFile(pokemonsTxt, bulbaPokedex);
+                var csvPairUp = new SerebiiPairUp();
+                CommaValuedPairUps(matchTxt, bulbaPokedex, csvPairUp);
+            }
 
             var pokeDex = new CommaSeparatedFilePokedex(pokemonsTxt);
             var pairer = new CommaSeparatedFilePairPokemon(matchTxt);
