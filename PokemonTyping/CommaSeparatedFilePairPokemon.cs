@@ -28,7 +28,7 @@ namespace PokemonTyping
         {
             _pairMasterDictionary = new Dictionary<PokemonType, Dictionary<PokemonType, double>>();
             var strings = File.ReadAllText(filePath).Split(new[] {'\n', '\r'}, StringSplitOptions.RemoveEmptyEntries).ToList();
-            foreach (var matches in strings.Select(s => s.Split(new[] {'|'})))
+            foreach (var matches in strings.Select(s => s.Split('|')))
             {
                 PokemonType matchType;
                 Enum.TryParse(matches[0], out matchType);

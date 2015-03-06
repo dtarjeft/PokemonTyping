@@ -68,6 +68,7 @@ namespace PokemonTyping.ConsoleTest
             const string pokemonsTxt = ".\\Pokemons.txt";
             const string matchTxt = ".\\Match.txt";
 
+            // This code serves to minimize web queries.
             if (!File.Exists(pokemonsTxt) || !File.Exists(matchTxt))
             {
                 var bulbaPokedex = new BulbapediaPokedex();
